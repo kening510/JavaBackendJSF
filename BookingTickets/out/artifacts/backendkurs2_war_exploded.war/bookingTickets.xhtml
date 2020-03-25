@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+        <h:outputStylesheet name="css/Style.css"/> <!--??-->
+</h:head>
+<h:body>
+    <h:form>
+
+
+        <h:outputText value="First name: " id="firstname" styleClass="testStyle"></h:outputText>
+        <h:inputText value="#{ticket.firstName}" size="10"></h:inputText> <br/>
+        <h:outputText value="Last name: " id="lastname" styleClass="testStyle"></h:outputText>
+        <h:inputText value="#{ticket.lastName}" size="10"></h:inputText> <br/>
+       <h:outputText value="Occupation: " id="occupation" styleClass="testStyle"></h:outputText>
+       <h:inputText value="#{ticket.occupation}" size="10"></h:inputText> <br/>
+
+        <h:outputText value="Destination: " id="destination"></h:outputText>
+
+
+   <h:selectOneMenu id="dropdown" value="#{ticket.destinationSelected}">
+       <f:selectItem itemValue="Stockholm" itemLabel="#{ticket.destinationList[0]}"/>
+       <f:selectItem itemValue="Peking" itemLabel="#{ticket.destinationList[1]}"/>
+       <f:selectItem itemValue="Tokyo" itemLabel="#{ticket.destinationList[2]}"/>
+   </h:selectOneMenu> <br/>
+
+        <h:outputText value="Travel class: " id="travelclass"></h:outputText> <br/>
+        <h:selectOneRadio value="#{ticket.classes}">
+            <f:selectItem itemValue="First" itemLabel="#{ticket.classList[0]}"/>
+            <f:selectItem itemValue="Business" itemLabel="#{ticket.classList[1]}"/>
+            <f:selectItem itemValue="Economy" itemLabel="#{ticket.classList[2]}"/>
+        </h:selectOneRadio>
+
+        <h:commandButton value="Book ticket" type="submit" action="confirmation"></h:commandButton>
+
+    </h:form>
+
+</h:body>
+</html>
