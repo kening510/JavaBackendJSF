@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <h:outputText value="Compute Loan Payment"
+                      style="font-weight:bold;color:mediumseagreen;text-shadow: 1px 1px greenyellow;font-size: large"></h:outputText>
+
+    </h:head>
+    <h:body>
+        <h:form>
+            <br/>
+            <h:outputText value="Name: "></h:outputText>
+            <h:inputText value="#{loanPaymentController.loanPayment.userName}">
+                <f:validateLength minimum="1"></f:validateLength>
+                <f:validator validatorId="nameValidator"></f:validator>
+            </h:inputText><br/>
+            <h:outputText value="Loan Amount: "></h:outputText>
+            <h:inputText value="#{loanPaymentController.loanPayment.totalLoan}"></h:inputText><br/>
+
+            <h:outputText value="Annual Interest Rate: "></h:outputText>
+            <h:inputText value="#{loanPaymentController.loanPayment.loanInterest}"></h:inputText><br/>
+
+            <h:outputText value="Number of Years: "></h:outputText>
+            <h:inputText value="#{loanPaymentController.loanPayment.numberOfYears}"></h:inputText><br/><br/>
+
+            <h:commandButton value="Compute Loan Payment" type="submit" action="LoanInformation"></h:commandButton>
+            <h:commandButton value="Reset" type="reset" action="#{loanPaymentController.reset}"></h:commandButton>
+
+        </h:form>
+
+    </h:body>
+</f:view>
+</html>

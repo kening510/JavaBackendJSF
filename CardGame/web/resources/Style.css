@@ -1,0 +1,14 @@
+.title{
+    font-size: large;
+    text-decoration-color: mediumpurple;
+    text-shadow: 1px 1px hotpink;
+}
+
+.cards{
+    height: 300px;
+    width: 150px;
+}
+
+body{
+    background-color: green;
+}

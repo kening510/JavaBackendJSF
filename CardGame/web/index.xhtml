@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+    <h:outputStylesheet name="Style.css"/>
+</h:head>
+<f:view>
+
+    <h:body>
+
+        <h:panelGroup layout="block" id="container">  <!--div-->
+
+            <h:outputLabel styleClass="title">Display Four Random Cards</h:outputLabel><br/><br/>
+
+            <h:graphicImage name="cards/#{cardsBean.randomFourCards.get(0)}" styleClass="cards"></h:graphicImage>
+            <h:graphicImage name="cards/#{cardsBean.randomFourCards.get(1)}" styleClass="cards"></h:graphicImage>
+            <h:graphicImage name="cards/#{cardsBean.randomFourCards.get(2)}" styleClass="cards"></h:graphicImage>
+            <h:graphicImage name="cards/#{cardsBean.randomFourCards.get(3)}" styleClass="cards"></h:graphicImage>
+
+            <h:form>
+
+                <h:commandButton value="Refresh" action="#{cardsBean.clickRefreshButton}"></h:commandButton>
+
+
+            </h:form>
+
+        </h:panelGroup>
+
+
+    </h:body>
+
+</f:view>
+</html>
